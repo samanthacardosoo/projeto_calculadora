@@ -1,14 +1,16 @@
 html {
     width: 400px;
-    height: 500px;   
 }
-body {
-    text-align: center;
-    width: 400px;
-    height: 500px;
+
+.calculadora {
+    background: #6c5b7be6;
     border: solid;
     border-radius: 10px;
-    margin: 0 auto;
+    border-color:#6d3c75;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #display {
@@ -19,11 +21,23 @@ body {
     height: 30px;
     margin: 5px auto;
     padding: 10px;
-}
+    font-size: 30px;
+    font-family: 'Orbitron', sans-serif;
+    }
 
 button {
-    padding: 20px;
     margin: 3px;
     width: 80px;
-    height: 80px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    background: #cea5a5;
+    border-style: none;
+    border-radius: 20px;
+}
+
+#apagar {
+    width: 120px;
+    height: 60px;
 }

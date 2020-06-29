@@ -4,83 +4,36 @@
     <head>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
+        <script src="calculadora.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
         <script defer src=""></script>
         <title> Calculadora </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
     <body>
-        <div id="display">""</div>
-        <button id="raizQuadrada">√</button>        
-        <button id="porcentagem">%</button>
-        <button id="apagarTudo">C</button>
-        <button id="apagar">C</button>                 
-        <button id="numeroSete">7</button>
-        <button id="numeroOito">8</button>
-        <button id="numeroNove">9</button>
-        <button id="divisao">÷</button>
-        <button id="numeroQuatro">4</button>
-        <button id="numeroCinco">5</button>
-        <button id="numeroSeis">6</button>
-        <button id="multiplicacao">x</button>
+        <div class=calculadora>
+        <div id="display"></div>
+    
         <button id="numeroUm">1</button>
         <button id="numeroDois">2</button>
         <button id="numeroTres">3</button>
-        <button id="subtracao">-</button>
-        <button id="numeroZero">0</button>
-        <button id="ponto">.</button>        
-        <button id="igual">=</button>
-        <button id="soma">+</button>
-    
+        <button id="soma">+</button>         
+        <button id="numeroQuatro">4</button>
+        <button id="numeroCinco">5</button>
+        <button id="numeroSeis">6</button>  
+        <button id="subtracao">-</button>                                    
+        <button id="numeroSete">7</button>
+        <button id="numeroOito">8</button>
+        <button id="numeroNove">9</button>
+        <button id="multiplicacao">×</button>         
+        <button id="numeroZero">0</button> 
+        <button id="ponto">.</button> 
+        <button id="igual">=</button>                       
+        <button id="divisao">÷</button>
+        <button id="apagar">Apagar</button> 
 
-
-     
-
-        <script>
-            //objeto calculadora                    //ao clicar, apagar um dígito, e ao pressionar apagar todos os campos
-            let calculadora = {};
-            calculadora.display = document.querySelector("#display");
-
-            let botaoUm = document.querySelector("#numeroUm");
-            let botaoDois = document.querySelector("#numeroDois");
-            let botaoTres = document.querySelector("#numeroTres");
-            let botaoQuatro = document.querySelector("#numeroQuatro");
-            let botaoCinco = document.querySelector("#numeroCinco");
-            let botaoSeis = document.querySelector("#numeroSeis");
-            let botaoSete = document.querySelector("#numeroSete");
-            let botaoOito = document.querySelector("#numeroOito");
-            let botaoNove = document.querySelector("#numeroNove");
-            let botaoZero = document.querySelector("#numeroZero");
-            let botaoSoma = document.querySelector("#soma");
-            let botaoIgual = document.querySelector("#igual");
-
-            let acumulador = "";
-            
-            botaoUm.onclick = function() {
-                calculadora.display.innerText += 1;
-            }
-
-            botaoSoma.onclick = function() {
-                acumulador += calculadora.display.innerText;
-                acumulador += " + ";
-                calculadora.display.innerText = "";
-            }
-
-            botaoIgual.onclick = function() {
-                //TODO: checar se existe conteúdo dentro do display
-
-                //colocando conteúdo do display no acumulador
-                acumulador += calculadora.display.innerText;
-                //resolvendo conta (conteúdo acumulador)
-                let resultado = eval(acumulador);
-                //colocando no display o conteúdo do acumulador
-                calculadora.display.innerText = resultado;
-                // limpando o acumulador
-                acumulador = "";
-
-            }
-
-        </script>
+        </div>
 
     </body>
 
