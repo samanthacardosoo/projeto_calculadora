@@ -21,68 +21,41 @@ let calculadora = {};
 
             let acumulador = "";
             
-            botaoUm.onclick = function() {
-                calculadora.display.innerText += 1;
+            function adicionarNumero(event) {
+                calculadora.display.innerText += event.target.innerText;
+                acumulador += event.target.innerText;
             }
 
-            botaoDois.onclick = function() {
-                calculadora.display.innerText += 2;
-            }
-
-            botaoTres.onclick = function() {
-                calculadora.display.innerText += 3;
-            }
-
-            botaoQuatro.onclick = function() {
-                calculadora.display.innerText += 4;
-            }
-
-            botaoCinco.onclick = function() {
-                calculadora.display.innerText += 5;
-            }
-
-            botaoSeis.onclick = function() {
-                calculadora.display.innerText += 6;
-            }
-
-            botaoSete.onclick = function() {
-                calculadora.display.innerText += 7;
-            }
-
-            botaoOito.onclick = function() {
-                calculadora.display.innerText += 8;
-            }
-
-            botaoNove.onclick = function() {
-                calculadora.display.innerText += 9;
-            }
-
-            botaoZero.onclick = function() {
-                calculadora.display.innerText += 0;
-            }
+            botaoUm.onclick = adicionarNumero;
+            botaoDois.onclick = adicionarNumero;
+            botaoTres.onclick = adicionarNumero;
+            botaoQuatro.onclick = adicionarNumero;
+            botaoCinco.onclick = adicionarNumero;
+            botaoSeis.onclick = adicionarNumero;
+            botaoSete.onclick = adicionarNumero;
+            botaoOito.onclick = adicionarNumero;
+            botaoNove.onclick = adicionarNumero;
+            botaoZero.onclick = adicionarNumero;
+            botaoPonto.onclick = adicionarNumero;
 
             botaoSoma.onclick = function() {
-                acumulador += calculadora.display.innerText;
                 acumulador += " + ";
-                calculadora.display.innerText = "";
+                calculadora.display.innerText += "+";
             }
 
             botaoSubtrai.onclick = function() {
-                acumulador += calculadora.display.innerText;
                 acumulador += " - ";
-                calculadora.display.innerText = "";
+                calculadora.display.innerText += "-";
             }
 
             botaoMultiplica.onclick = function() {
-                acumulador += calculadora.display.innerText;
                 acumulador += " * ";
-                calculadora.display.innerText = "";
+                calculadora.display.innerText += "×";
             }
 
             botaoDivide.onclick = function() {
-                acumulador += calculadora.display.innerText;
                 acumulador += " / ";
-                calculadora.display.innerText = "";
+                calculadora.display.innerText += "÷";
             }
 
             botaoApaga.onclick = function() {
@@ -90,20 +63,8 @@ let calculadora = {};
                 acumulador = "";
             }
 
-            botaoPonto.onclick = function() {
-                calculadora.display.innerText = ".";
-            }
-
             botaoIgual.onclick = function() {
-                //TODO: checar se existe conteúdo dentro do display
-
-                //colocando conteúdo do display no acumulador
-                acumulador += calculadora.display.innerText;
-                //resolvendo conta (conteúdo acumulador)
                 let resultado = eval(acumulador);
-                //colocando no display o conteúdo do acumulador
                 calculadora.display.innerText = resultado;
-                // limpando o acumulador
-                acumulador = "";
-
+                acumulador = resultado;
             }
